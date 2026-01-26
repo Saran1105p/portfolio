@@ -51,7 +51,7 @@ export const About = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="aspect-square rounded-xl bg-gradient-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 flex items-center justify-center overflow-hidden">
-                  <div className="text-[200px] font-bold neon-text opacity-20">JD</div>
+                  <div className="text-[200px] font-bold neon-text opacity-20">PS</div>
                 </div>
                 
                 {/* Floating badges */}
@@ -70,7 +70,7 @@ export const About = () => {
                   transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
                 >
                   <MapPin size={16} className="text-accent" />
-                  <span className="text-sm font-medium">San Francisco, CA</span>
+                  <span className="text-sm font-medium">Chennai, India</span>
                 </motion.div>
               </motion.div>
             </div>
