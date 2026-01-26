@@ -3,30 +3,41 @@ import { useRef, useState } from "react";
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Machine Learning",
     items: [
-      { name: "React", level: 95, color: "from-neon-cyan to-neon-blue" },
-      { name: "TypeScript", level: 90, color: "from-neon-blue to-neon-purple" },
-      { name: "Next.js", level: 85, color: "from-neon-purple to-neon-pink" },
-      { name: "Tailwind CSS", level: 92, color: "from-neon-cyan to-neon-purple" },
+      { name: "SVM", level: 80, color: "from-neon-cyan to-neon-blue" },
+      { name: "KNN", level: 78, color: "from-neon-blue to-neon-purple" },
+      { name: "Random Forest", level: 82, color: "from-neon-purple to-neon-pink" },
+      { name: "PCA", level: 75, color: "from-neon-pink to-neon-cyan" },
+      { name: "K-Means Clustering", level: 77, color: "from-neon-cyan to-neon-purple" },
     ],
   },
   {
-    category: "Backend",
+    category: "Machine Learning",
     items: [
-      { name: "Node.js", level: 88, color: "from-neon-cyan to-neon-blue" },
-      { name: "Python", level: 82, color: "from-neon-blue to-neon-purple" },
-      { name: "PostgreSQL", level: 85, color: "from-neon-purple to-neon-pink" },
-      { name: "GraphQL", level: 78, color: "from-neon-pink to-neon-cyan" },
+      { name: "Data Visualization", level: 85, color: "from-neon-cyan to-neon-blue" },
+      { name: "Predictive Modeling", level: 80, color: "from-neon-blue to-neon-purple" },
+      { name: "Data Analysis", level: 88, color: "from-neon-purple to-neon-pink" },
+      { name: "NLP", level: 85, color: "from-neon-pink to-neon-cyan" },
     ],
   },
   {
-    category: "Tools & Cloud",
+    category: "Programming Languages",
     items: [
-      { name: "Docker", level: 80, color: "from-neon-cyan to-neon-blue" },
-      { name: "AWS", level: 75, color: "from-neon-blue to-neon-purple" },
-      { name: "Git", level: 92, color: "from-neon-purple to-neon-pink" },
-      { name: "CI/CD", level: 82, color: "from-neon-pink to-neon-cyan" },
+      { name: "Python", level: 90, color: "from-neon-cyan to-neon-blue" },
+      { name: "JavaScript", level: 88, color: "from-neon-blue to-neon-purple" },
+      { name: "C", level: 85, color: "from-neon-purple to-neon-pink" },
+      { name: "MySQL", level: 82, color: "from-neon-pink to-neon-cyan" },
+      { name: "Java", level: 92, color: "from-neon-pink to-neon-cyan" },
+    ],
+  },
+  {
+    category: "Tools & Frameworks",
+    items: [
+      { name: "Jupyter Notebook", level: 88, color: "from-neon-cyan to-neon-blue" },
+      { name: "TensorFlow", level: 80, color: "from-neon-blue to-neon-purple" },
+      { name: "Matplotlib", level: 85, color: "from-neon-purple to-neon-pink" },
+      { name: "VS Code", level: 95, color: "from-neon-pink to-neon-cyan" },
     ],
   },
 ];
@@ -69,28 +80,7 @@ const SkillCard = ({
       }}
       className="glass-card p-6 cursor-pointer transition-all duration-200 hover:shadow-lg"
     >
-      <div className="flex justify-between items-center mb-4">
-        <h4 className="font-semibold text-lg">{skill.name}</h4>
-        <span className="text-primary font-medium">{skill.level}%</span>
-      </div>
-      
-      {/* Progress bar */}
-      <div className="h-3 bg-muted rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: 0.5 + index * 0.1, ease: "easeOut" }}
-          className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
-        >
-          {isHovered && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute inset-0 bg-white/20"
-            />
-          )}
-        </motion.div>
-      </div>
+      <h4 className="font-semibold text-lg">{skill.name}</h4>
 
       {/* 3D shine effect */}
       <motion.div

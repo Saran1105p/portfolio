@@ -5,43 +5,43 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    title: "Senior Full Stack Developer",
-    company: "Tech Innovations Inc.",
-    period: "2022 - Present",
+    title: "Frontend Developer",
+    company: "ParkQwik",
+    period: "Nov 2025 - Dec 2025",
     description:
-      "Leading development of cloud-native applications, mentoring junior developers, and implementing CI/CD pipelines.",
+      "Developed responsive user interfaces and enhanced frontend features for the ParkQwik application.",
   },
   {
     type: "work",
     title: "Full Stack Developer",
-    company: "Digital Solutions Ltd.",
-    period: "2020 - 2022",
+    company: "Centre for Data Science, Rajalakshmi Institute of Technology",
+    period: "June 2025 - Aug 2025",
     description:
-      "Built and maintained multiple client projects using React, Node.js, and AWS services.",
-  },
-  {
-    type: "education",
-    title: "Master's in Computer Science",
-    company: "Stanford University",
-    period: "2018 - 2020",
-    description:
-      "Specialized in Distributed Systems and Machine Learning. Graduated with honors.",
+      "Developed full-stack applications, worked with databases and APIs, contributed to data science projects.",
   },
   {
     type: "work",
-    title: "Junior Developer",
-    company: "StartUp Hub",
-    period: "2018 - 2020",
+    title: "Front-End Developer",
+    company: "CodexIntern",
+    period: "Aug 2025",
     description:
-      "Developed features for SaaS products, participated in agile sprints, and collaborated with cross-functional teams.",
+      "Completed a virtual internship in Front-End Development. Gained practical experience in HTML, CSS, and JavaScript for building responsive web pages.",
   },
   {
     type: "education",
-    title: "Bachelor's in Software Engineering",
-    company: "MIT",
-    period: "2014 - 2018",
+    title: "B.E - CSE(AI&ML)",
+    company: "Rajalakshmi Institute of Technology, Chennai",
+    period: "2023 - 2027",
     description:
-      "Foundation in programming, algorithms, and software development principles.",
+      "Specializing in Artificial Intelligence and Machine Learning with focus on Full Stack Development. CGPA: 7.8",
+  },
+  {
+    type: "education",
+    title: "HSC",
+    company: "Brindhavan Higher Secondary School, Pattukkottai",
+    period: "2022 - 2023",
+    description:
+      "Higher Secondary Education. Score: 80%",
   },
 ];
 

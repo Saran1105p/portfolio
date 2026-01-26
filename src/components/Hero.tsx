@@ -99,9 +99,6 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 glass-card text-sm font-medium text-primary">
-            ✨ Available for freelance work
-          </span>
         </motion.div>
 
         <motion.h1
@@ -112,7 +109,7 @@ export const Hero = () => {
         >
           Hi, I'm{" "}
           <span className="neon-text relative">
-            P.SARAN
+            SARAN P
             <motion.span
               className="absolute -inset-2 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-xl -z-10"
               animate={{ opacity: [0.5, 0.8, 0.5] }}

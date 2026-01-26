@@ -98,16 +98,7 @@ const ProjectCard = ({
             </div>
             <div className="flex gap-4">
               <motion.a
-                href={project.liveUrl}
-                className="flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ExternalLink size={16} />
-                Live Demo
-              </motion.a>
-              <motion.a
-                href={project.githubUrl}
+                href={'https://github.com/Saran1105p?tab=repositories'}
                 className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -1,11 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, Mail, MapPin, Phone, Github, Linkedin} from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+// Initialize EmailJS
+emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your EmailJS public key
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/Saran1105p?tab=repositories", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/saran-p-b4940a30a/", label: "LinkedIn" },
 ];
 
 const FloatingLabelInput = ({
@@ -13,14 +16,17 @@ const FloatingLabelInput = ({
   type = "text",
   name,
   isTextarea = false,
+  value,
+  onChange,
 }: {
   label: string;
   type?: string;
   name: string;
   isTextarea?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState("");
 
   const InputComponent = isTextarea ? "textarea" : "input";
 
@@ -30,7 +36,7 @@ const FloatingLabelInput = ({
         type={type}
         name={name}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={onChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         className={`w-full px-4 py-4 bg-transparent border border-border rounded-xl focus:border-primary focus:outline-none transition-all duration-300 ${
@@ -70,13 +76,42 @@ export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
+
+    try {
+      await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        to_email: "itssaran05@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -190,13 +225,31 @@ export const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
-              <FloatingLabelInput label="Your Name" name="name" />
-              <FloatingLabelInput label="Your Email" type="email" name="email" />
-              <FloatingLabelInput label="Subject" name="subject" />
+              <FloatingLabelInput 
+                label="Your Name" 
+                name="name" 
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <FloatingLabelInput 
+                label="Your Email" 
+                type="email" 
+                name="email" 
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <FloatingLabelInput 
+                label="Subject" 
+                name="subject" 
+                value={formData.subject}
+                onChange={handleChange}
+              />
               <FloatingLabelInput
                 label="Your Message"
                 name="message"
                 isTextarea
+                value={formData.message}
+                onChange={handleChange}
               />
 
               <motion.button

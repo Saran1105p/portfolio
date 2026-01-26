@@ -22,25 +22,10 @@ export const Footer = () => {
             className="text-3xl font-bold neon-text"
             whileHover={{ scale: 1.05 }}
           >
-            JD
+            S
           </motion.a>
 
-          {/* Copyright */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center gap-2 text-muted-foreground"
-          >
-            Made with{" "}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <Heart size={16} className="text-accent fill-accent" />
-            </motion.span>{" "}
-            by John Doe © {new Date().getFullYear()}
-          </motion.p>
+       
 
           {/* Scroll to top */}
           <motion.button
