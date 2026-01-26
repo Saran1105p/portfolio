@@ -4,44 +4,24 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Autodash AI",
     description:
-      "A full-stack e-commerce solution with real-time inventory management, payment processing, and analytics dashboard.",
-    image: "🛒",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "Developing the Front-end interface for AutodashAI using HTML, CSS, React to create a responsive, user-friendly design. Built interactive dashboards and integrated AI chatbot features, focusing on smooth user experience and visual appeal.",
+    image: "🚗",
+    tags: ["React", "HTML", "CSS", "AI Integration", "Dashboard"],
     liveUrl: "#",
     githubUrl: "#",
-    color: "from-neon-cyan to-neon-blue",
+    color: "from-neon-cyan to-neon-purple",
   },
   {
-    title: "AI Content Generator",
+    title: "AI Integrated Chatbot",
     description:
-      "An AI-powered platform for generating marketing content, blog posts, and social media captions using GPT-4.",
+      "Developed a machine-learning enabled chatbot with real-time interaction features. Integrated with APIs and trained with custom datasets for improved user response accuracy.",
     image: "🤖",
-    tags: ["Next.js", "OpenAI", "Tailwind", "Prisma"],
+    tags: ["Machine Learning", "Python", "API Integration", "NLP"],
     liveUrl: "#",
     githubUrl: "#",
     color: "from-neon-purple to-neon-pink",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative project management tool with real-time updates, Kanban boards, and team analytics.",
-    image: "📋",
-    tags: ["React", "Firebase", "TypeScript", "Redux"],
-    liveUrl: "#",
-    githubUrl: "#",
-    color: "from-neon-pink to-neon-cyan",
-  },
-  {
-    title: "Crypto Dashboard",
-    description:
-      "Real-time cryptocurrency tracking dashboard with portfolio management and price alerts.",
-    image: "💰",
-    tags: ["Vue.js", "Python", "WebSocket", "Chart.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-    color: "from-neon-blue to-neon-purple",
   },
 ];
 
