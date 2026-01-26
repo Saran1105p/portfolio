@@ -126,7 +126,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">hello@johndoe.dev</p>
+                  <p className="font-medium">itssaran05@gmail.com</p>
                 </div>
               </motion.div>
 
@@ -139,7 +139,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium">+1 (555) 123-4567</p>
+                  <p className="font-medium">+91 9789719560</p>
                 </div>
               </motion.div>
 
@@ -152,7 +152,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">San Francisco, CA</p>
+                  <p className="font-medium">Chennai, India</p>
                 </div>
               </motion.div>
             </div>

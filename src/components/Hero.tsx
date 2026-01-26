@@ -112,7 +112,7 @@ export const Hero = () => {
         >
           Hi, I'm{" "}
           <span className="neon-text relative">
-            John Doe
+            P.SARAN
             <motion.span
               className="absolute -inset-2 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-xl -z-10"
               animate={{ opacity: [0.5, 0.8, 0.5] }}
