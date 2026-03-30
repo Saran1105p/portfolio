@@ -4,6 +4,16 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
+    title: "Movie Recommendation System",
+    description:
+      "Developed an end-to-end movie recommendation system that delivers real-time personalized movie suggestions using user preference analysis.",
+    image: "🎬",
+    tags: ["Python", "Pandas", "Scikit-learn", "Surprise", "Flask"],
+    liveUrl: "#",
+    githubUrl: "#",
+    color: "from-neon-cyan to-neon-purple",
+  },
+  {
     title: "Autodash AI",
     description:
       "Developing the Front-end interface for AutodashAI using HTML, CSS, React to create a responsive, user-friendly design. Built interactive dashboards and integrated AI chatbot features, focusing on smooth user experience and visual appeal.",
@@ -11,17 +21,17 @@ const projects = [
     tags: ["React", "HTML", "CSS", "AI Integration", "Dashboard"],
     liveUrl: "#",
     githubUrl: "#",
-    color: "from-neon-cyan to-neon-purple",
+    color: "from-neon-purple to-neon-pink",
   },
   {
-    title: "AI Integrated Chatbot",
+    title: "Automated Resume Analyzer",
     description:
-      "Developed a machine-learning enabled chatbot with real-time interaction features. Integrated with APIs and trained with custom datasets for improved user response accuracy.",
-    image: "🤖",
-    tags: ["Machine Learning", "Python", "API Integration", "NLP"],
+      "AI-based tool that automatically analyzes resumes and extracts key details like skills, education, and experience. Compares candidate profiles with job requirements and provides a suitability score for recruitment.",
+    image: "📄",
+    tags: ["AI", "Machine Learning", "NLP"],
     liveUrl: "#",
     githubUrl: "#",
-    color: "from-neon-purple to-neon-pink",
+    color: "from-neon-pink to-neon-cyan",
   },
 ];
 
@@ -145,7 +155,7 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

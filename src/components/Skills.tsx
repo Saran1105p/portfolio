@@ -38,6 +38,7 @@ const skills = [
       { name: "TensorFlow", level: 80, color: "from-neon-blue to-neon-purple" },
       { name: "Matplotlib", level: 85, color: "from-neon-purple to-neon-pink" },
       { name: "VS Code", level: 95, color: "from-neon-pink to-neon-cyan" },
+      { name: "Antigravity", level: 90, color: "from-neon-cyan to-neon-purple" },
     ],
   },
 ];

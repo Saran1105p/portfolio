@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Download, MapPin, Calendar, Briefcase } from "lucide-react";
 
 const stats = [
-  { label: "Years Experience", value:"5"  },
+  { label: "Years Experience", value: "5" },
   { label: "Projects Completed", value: "50+" },
   { label: "Happy Clients", value: "30+" },
   { label: "Technologies", value: "20+" },
@@ -39,7 +39,7 @@ export const About = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Image/Avatar area */}
           <img
-            src="/my_image.jpeg"
+            src="/img-professional..png"
             alt="Profile"
             className="w-full max-w-sm h-auto rounded-xl shadow-lg justify-self-center"
           />
@@ -52,21 +52,22 @@ export const About = () => {
             className="space-y-6"
           >
             <p className="text-base text-muted-foreground leading-relaxed text-justify">
-             I am a dedicated third-year undergraduate specializing in Artificial Intelligence and Machine Learning, with strong interests in Full Stack Development. I am passionate about building scalable, user-friendly applications that combine intelligent systems with modern web technologies. I enjoy solving real-world problems using data-driven approaches and continuously improving my technical and problem-solving skills. I am currently seeking an internship opportunity where I can contribute to impactful projects, gain hands-on industry experience, and grow as a professional developer
-            </p>
-           <motion.a
-            href="/resume.saran.pdf"
-            download
-            className="group mt-8 px-6 py-3 glass-card neon-border font-medium flex items-center gap-3"
-            whileHover={{ scale: 1.02 }}
-             whileTap={{ scale: 0.98 }}
+              B.E. Artificial Intelligence and Machine Learning student skilled in Python, Full Stack Development, and
+              Machine Learning. Experienced in developing AI-driven applications and data analysis projects. Seeking
+              opportunities to apply technical expertise to build scalable, intelligent, and user-focused solutions.            </p>
+            <motion.a
+              href="/resume.fs.pdf"
+              download
+              className="group mt-8 px-6 py-3 glass-card neon-border font-medium flex items-center gap-3"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-            <Download size={20} className="group-hover:animate-bounce" />
-            Download Resume
-            <motion.div
-             className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
-            />
-          </motion.a>
+              <Download size={20} className="group-hover:animate-bounce" />
+              Download Resume
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+              />
+            </motion.a>
 
           </motion.div>
         </div>

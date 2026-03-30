@@ -1,10 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Mail, MapPin, Phone, Github, Linkedin} from "lucide-react";
-import emailjs from "@emailjs/browser";
-
-// Initialize EmailJS
-emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your EmailJS public key
+// Removed EmailJS in favor of FormSubmit
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/Saran1105p?tab=repositories", label: "GitHub" },
@@ -96,16 +93,27 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        to_email: "itssaran05@gmail.com",
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+      // Using FormSubmit for configuration-free email sending
+      const response = await fetch("https://formsubmit.co/ajax/saran.p.r.2005@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+        }),
       });
 
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send");
+      }
     } catch (error) {
       console.error("Failed to send email:", error);
       alert("Failed to send message. Please try again.");
@@ -161,7 +169,9 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">itssaran05@gmail.com</p>
+                  <a href="mailto:saran.p.r.2005@gmail.com" className="font-medium hover:text-primary transition-colors block">
+                    saran.p.r.2005@gmail.com
+                  </a>
                 </div>
               </motion.div>
 
@@ -174,7 +184,9 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium">+91 9789719560</p>
+                  <a href="tel:+919789719560" className="font-medium hover:text-secondary transition-colors block">
+                    +91 9789719560
+                  </a>
                 </div>
               </motion.div>
 
